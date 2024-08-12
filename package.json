@@ -1,0 +1,62 @@
+{
+  "name": "sharepoint-rest-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "docs": "npx typedoc",
+    "start": "ts-node index.ts",
+    "test:new-auth": "tsx test/internal/newauth.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ts": "rm -rf ./lib && tspc --build",
+    "build": "rm -rf ./lib && rollup -c",
+    "clean": "tsc --build --clean",
+    "find-circular-deps": "madge --circular .\\src\\index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "exports": {
+    "import": "./lib/index.js",
+    "require": "./lib/index.cjs"
+  },
+  "browser": {
+    "./lib/index.js": "./lib/bundle.js"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873/"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.8",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.9.2",
+    "madge": "^7.0.0",
+    "rollup": "^4.20.0",
+    "ts-patch": "^3.2.1",
+    "ts-transformer-keys": "^0.4.4",
+    "tslib": "^2.6.3",
+    "tsx": "^4.17.0",
+    "typedoc": "^0.26.5",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.2"
+  },
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

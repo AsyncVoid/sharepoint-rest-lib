@@ -1,0 +1,11 @@
+scripts/*
+docs/**
+node_modules
+src
+.gitignore
+test
+.idea/**
+tsconfig.json
+babel.config.js
+rollup.config.mjs
+typedoc.json
